@@ -3,7 +3,7 @@ Setting up Python on a new machine
 
 ## Mac
 
-1. Install prequesites: brew, xcode
+1. Install prerequisites: brew, xcode
 
 2. Install [pyenv](https://github.com/pyenv/pyenv#installation)
 
