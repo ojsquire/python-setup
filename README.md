@@ -44,7 +44,7 @@ Although virtual environments are very powerful, they can be extremely confusing
 Here we will use `virtualenv` for our virtual environments. Note: Python now comes bundled with `venv` for this purpose, but it lacks some basic functionality that `virtualenv` has. The main thing I found lacking was the ability to support the use of multiple Python versions. To use `virtualenv`, make sure you have first followed the installation instructions in step 4 of the "Install Python with pyenv" section.
 
 ### Creating a new virtual environment
-Typically you would have one virtual environment per project.
+Typically you would have one virtual environment per project. Navigate to that directory and follow these instructions to set up a new virtual environment:
 
 1. **Finding the Python version**. When we create the environment, we can specify the version of Python it should use. For this we need to find the path were the version we want is installed. With `pyenv` you can find the path by running `pyenv which python`. Note: this will run it for the current active version of Python. If you want the path of a different version you must first switch to that version (e.g. with `pyenv global <PYTHON VERSION>`). Example output is: `~/.pyenv/versions/3.8.3/bin/python`
 
