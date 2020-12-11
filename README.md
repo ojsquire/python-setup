@@ -1,4 +1,4 @@
-# python-setup
+# Python setup for Mac
 The following is my preferred method of setting up Python on a Mac.
 
 ## Getting Python for the first time
@@ -47,24 +47,22 @@ Here we will use `virtualenv` for our virtual environments. Note: Python now com
 Typically you would have one virtual environment per project.
 
 1. **Finding the Python version**. When we create the environment, we can specify the version of Python it should use. For this we need to find the path were the version we want is installed. With `pyenv` you can find the path by running `pyenv which python`. Note: this will run it for the current active version of Python. If you want the path of a different version you must first switch to that version (e.g. with `pyenv global <PYTHON VERSION>`). Example output is: `~/.pyenv/versions/3.8.3/bin/python`
+
 2. **Creating the virtual environment**. Now, to create the new virtual environment with this version of Python, navigate to the root directory of you project (git repo) and run:
 ```
 virtualenv --python=/path/to/python/version .venv
 ```
 This creates your virtual environment in a directory called `.venv`. Calling the directory you want your virtual environment to live `.venv` is a convention, but you can call it anything.
+
 3. **Activating the virtual environment**. You are not yet using your virtual environment. You must first activate it. To do so run:
 ```
 source .venv/bin/activate
 ```
 If this works you should see your command prompt change to the name `(.venv)`. Now when you install any Python packages they will _only_ be installed in your virtual environment and only be available to this project. Make sure to deactivate your environment when you are not working on this project with `deactivate`, and make sure to reactivate you virtual environment again when you start working on the project again with the `source` command as above!
 
-#### Installing Python libs in virtual environment
-Since your virtual env points to a clean Python installation, it will not have any packages but those that come bundled with the Python installation (Standard Library). To install new ones simply do:
-
+4. **Installing Python libs in virtual environment**. Since your virtual environment points to a clean Python installation, it will not have any packages but those that come bundled with the Python installation (Standard Library). Before installing any new libraries it's always good to make sure `pip` is up to date (run `pip install --upgrade pip`). Then, to install new packages simply do:
 ```
-pip install --upgrade pip
 pip install <PACKAGE>
 ```
 
-#### Add virtualenv dir to `.gitignore`
-When you do this, it will create a directory in your git repo (assuming you are using git) with hundred of files in it (essentially all the packages you need installed). You don't want this in git (!), so make sure you add this dir to your `.gitignore` file (normally I call this dir `.venv` so I add `.venv` to my `.gitignore`).
+5. **Add virtualenv dir to `.gitignore`**. When you create your virtual environment, it will create a directory in your git repo (assuming you are using git) with thousands of files in it (essentially all the packages you need installed). You don't want this in git (!), so make sure you add this directory to your `.gitignore` file (e.g if it's called `.venv`, add `.venv` to your `.gitignore`).
