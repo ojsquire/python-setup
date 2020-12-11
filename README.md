@@ -66,3 +66,6 @@ pip install <PACKAGE>
 ```
 
 5. **Add virtualenv dir to `.gitignore`**. When you create your virtual environment, it will create a directory in your git repo (assuming you are using git) with thousands of files in it (essentially all the packages you need installed). You don't want this in git (!), so make sure you add this directory to your `.gitignore` file (e.g if it's called `.venv`, add `.venv` to your `.gitignore`).
+
+### Making dependencies reproducible
+TODO: talk about `requirements.txt` and alternatives.
