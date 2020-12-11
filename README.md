@@ -52,7 +52,7 @@ Typically you would have one virtual environment per project. Navigate to that d
 ```
 virtualenv --python=/path/to/python/version .venv
 ```
-This creates your virtual environment in a directory called `.venv`. Calling the directory you want your virtual environment to live `.venv` is a convention, but you can call it anything.
+This creates your virtual environment in a directory called `.venv`. Calling this directory "`.venv`" is a convention, but you can call it anything you like.
 
 3. **Activating the virtual environment**. You are not yet using your virtual environment. You must first activate it. To do so run:
 ```
