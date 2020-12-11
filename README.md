@@ -4,11 +4,11 @@ The following is my preferred method of setting up Python on a Mac.
 ## Getting Python for the first time
 Mac actually comes with Python pre-installed, but it is a very old version of Python (2.7), which is mainly there for legacy reasons. I would really recommend not using this version and installing the latest version. This guide will show you how to do this in a sensible way that will prevent a lot of headaches later on.
 
-### 1. Install prerequisites
+### 1. Install Mac prerequisites
 * Install [`brew`](https://brew.sh/), Mac's "missing" package manager. This should be the first thing you install, since it's needed for the installation of everything else!
 * Make sure [`xcode`](https://en.wikipedia.org/wiki/Xcode) and xcode developer tools are installed (there were some issues with this on Catalina, may have to manually download & install).
 
-### 2. Pyenv
+### 2. Install Pyenv
 [Pyenv](https://github.com/pyenv/pyenv) is a tool for managing Python versions on your machine. It is very easy to end up with several versions of Python on your machine (Mac already comes with 2.7!), and you may actually want this, since different projects can use different versions. However, if you don't manage these versions carefully you can end up with all sorts of problems (e.g. dependency issues). Therefore, before installing any new versions of Python I would recommend installing `pyenv` (follow the [installation instructions](https://github.com/pyenv/pyenv#installation)).
 
 ### 3. Install Python with pyenv
