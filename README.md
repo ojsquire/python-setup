@@ -17,7 +17,7 @@ Mac actually comes with Python pre-installed, but it is a very old version of Py
 ```
 pyenv install --list
 ```
-2. **Global or local installation?**. Versions can be installed [locally or globally](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-local). Global is suitable if you want the version available throughout your system, whilst local is best if you want this version only for a specific project. Note: if you install globally but also use a virtual environment (see next section), this means that you can still have separate packages installed for separate projects and avoid dependency issues. So I would recommend global installation if it's a version of Python you think you will use for many different projects. To see what versions of Python you already have installed globally run:
+2. **Global or local installation?** Versions can be installed [locally or globally](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-local). Global is suitable if you want the version available throughout your system, whilst local is best if you want this version only for a specific project. Note: if you install globally but also use a virtual environment (see next section), this means that you can still have separate packages installed for separate projects and avoid dependency issues. So I would recommend global installation if it's a version of Python you think you will use for many different projects. To see what versions of Python you already have installed globally run:
 ```
 pyenv versions
 ```
@@ -25,7 +25,7 @@ pyenv versions
 ```
 pyenv install 3.8.5
 ```
-3. **Switch global Python version to version installed in (2)**. Just because you have installed a new version of Python, doesn't mean your system is currently using it. To can see which version is currently being used in the output of `pyenv versions`. To switch to 3.8.5 that you just installed, run:
+3. **Switch global Python version to version installed in (2)**. Just because you have installed a new version of Python, doesn't mean your system is currently using it. You can see which version is currently being used in the output of `pyenv versions`. To switch to 3.8.5 that you just installed, run:
 ```
 pyenv global 3.8.5
 ```
