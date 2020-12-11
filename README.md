@@ -1,13 +1,25 @@
 # python-setup
-Setting up Python on a Mac
+The following is my preferred method of setting up Python on a Mac.
 
 ## Getting Python for the first time
+Mac actually comes with Python pre-installed, but it is a very old version of Python (2.7), which is mainly there for legacy reasons. I would really recommend not using this version and installing the latest version. This guide will show you how to do this in a sensible way that will prevent a lot of headaches later on.
 
-1. Install prerequisites: brew, xcode
-2. Install [pyenv](https://github.com/pyenv/pyenv#installation)
-3. Install Python version globally with pyenv (e.g. `pyenv install 3.8.5`)
-4. Switch global Python version to version installed in (3) (e.g. `pyenv global 3.8.5`)
-5. Install globally needed Python packages: pip, virtualenv, pylint
+### 1. Install prerequisites
+* Install [`brew`](https://brew.sh/), Mac's "missing" package manager. This should be the first thing you install, since it's needed for the installation of everything else!
+* Make sure [`xcode`](https://en.wikipedia.org/wiki/Xcode) and xcode developer tools are installed (there were some issues with this on Catalina, may have to manually download & install).
+
+### 2. Pyenv
+[Pyenv](https://github.com/pyenv/pyenv) is a tool for managing Python versions on your machine. It is very easy to end up with several versions of Python on your machine (Mac already comes with 2.7!), and you may actually want this, since different projects can use different versions. However, if you don't manage these versions carefully you can end up with all sorts of problems (e.g. dependency issues). Therefore, before installing any new versions of Python I would recommend installing pyenv first (follow the [installation instructions](https://github.com/pyenv/pyenv#installation)).
+
+### 3. Install Python with pyenv
+
+1. **Select a Python version to install**. Now that `pyenv` is installed, you can use it to install your desired version of Python. Pyenv supports a huge number of Python versions; to see which are available run `pyenv install --list`
+
+
+For the purposes of this guide, we will 
+2. Install Python version globally with pyenv (e.g. `pyenv install 3.8.5`)
+3. Switch global Python version to version installed in (3) (e.g. `pyenv global 3.8.5`)
+4. Install globally needed Python packages: pip, virtualenv, pylint
 
 ## Virtual environments
 It is a good idea at this point to set up a way to manage Python virtual environments, since you don't want to have to install all packages needed for all projects globally; this could end up with package conflicts and messy dependencies. Also it may be that you need to use different versions of Python for different projects. To solve this we will use `virtualenv`. Note: Python now comes bundled with `venv` for this purpose, but it is not as powerful as `virtualenv`, e.g. it does not support use of multiple Python versions, therefore we will use `virtualenv` instead.
