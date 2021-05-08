@@ -60,7 +60,14 @@ source .venv/bin/activate
 ```
 If this works you should see your command prompt change to the name `(.venv)`. Now when you install any Python packages they will _only_ be installed in your virtual environment and only be available to this project. Make sure to deactivate your environment when you are not working on this project with `deactivate`, and make sure to reactivate you virtual environment again when you start working on the project again with the `source` command as above!
 
-4. **Installing Python libs in virtual environment**. Since your virtual environment points to a clean Python installation, it will not have any packages but those that come bundled with the Python installation ([Standard Library](https://docs.python.org/3/library/)). Before installing any new libraries it's always good to make sure `pip` is up to date (run `pip install --upgrade pip`). Then, to install new packages simply do:
+4. **Installing Python libs in virtual environment**. Since your virtual environment points to a clean Python installation, it will not have any packages but those that come bundled with the Python installation ([Standard Library](https://docs.python.org/3/library/)). Before installing any new libraries it's always good to make sure `pip` is up to date. Run:
+
+```
+pip install --upgrade pip
+```
+
+Then, to install new packages simply do:
+
 ```
 pip install <PACKAGE>
 ```
