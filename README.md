@@ -81,5 +81,19 @@ By default, running Jupyter Lab inside your virtual environment with `jupyter la
 pip install ipykernel
 ```
 
+Now you can create a Jupuyter kernel using your virtual environment by running:
+
+```
+python -m ipykernel install --name=<YOUR-NEW-KERNEL-NAME>
+```
+
+Then launch jupyer lab:
+
+```
+jupyter lab
+```
+
+And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using your virtual environment.
+
 ## Making dependencies reproducible
 TODO: talk about `requirements.txt` and alternatives.
