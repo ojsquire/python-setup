@@ -75,19 +75,19 @@ pip install <PACKAGE>
 5. **Add virtualenv dir to `.gitignore`**. When you create your virtual environment, it will create a directory in your git repo (assuming you are using git) with thousands of files in it (essentially all the packages you need installed). You don't want this in git (!), so make sure you add this directory to your `.gitignore` file (e.g if it's called `.venv`, add `.venv` to your `.gitignore`).
 
 ## Setting up Jupyter Lab inside a virtual environment
-By default, running Jupyter Lab inside your virtual environment with `jupyter lab` will not pick up on the packages you have installed inside your virtual environment. This is because the default kernel will still be pointing to the version of Python outside the virtual environment. To change this, you need to create a new kernel that specifically uses the version of Python inside your virtual environment. To do this, first install `ipykernel`:
+By default, running Jupyter Lab inside your virtual environment with `jupyter lab` will not pick up on the packages you have installed inside your virtual environment. This is because the default kernel will still be pointing to the version of Python outside the virtual environment. To change this, you need to create a new kernel that specifically uses the version of Python inside your virtual environment. Note: if Jupyter Lab is already installed outside you virtual environment, you don't need to install a whole new version of Jupyter Lab inside you virtualenv, you just need to create a new kernel which will point to the version of Jupyter Lab that is already installed. To create the new kernel, first install `ipykernel`:
 
 ```
 pip install ipykernel
 ```
 
-Now you can create a Jupuyter kernel using your virtual environment by running:
+Now you can create a Jupyter kernel using your virtual environment by running:
 
 ```
 python -m ipykernel install --name=<YOUR-NEW-KERNEL-NAME>
 ```
 
-Then launch jupyer lab:
+Then launch jupyter lab:
 
 ```
 jupyter lab
