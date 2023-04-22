@@ -60,17 +60,30 @@ source .venv/bin/activate
 ```
 If this works you should see your command prompt change to the name `(.venv)`. Now when you install any Python packages they will _only_ be installed in your virtual environment and only be available to this project. Make sure to deactivate your environment when you are not working on this project with `deactivate`, and make sure to reactivate you virtual environment again when you start working on the project again with the `source` command as above!
 
-4. **Installing Python libs in virtual environment**. Since your virtual environment points to a clean Python installation, it will not have any packages but those that come bundled with the Python installation ([Standard Library](https://docs.python.org/3/library/)). Before installing any new libraries it's always good to make sure `pip` is up to date. Run:
+4. **Installing Python libs in virtual environment**. Since your virtual environment points to a clean Python installation, it will not have any packages but those that come bundled with the Python installation ([Standard Library](https://docs.python.org/3/library/)). Since your virtual environment is somewhat ephemeral (if you delete your `.venv` it's gone), in order to keep track of what packages need to be installed, it's a good idea to create a `requirements.txt` file that lists all the packages needed:
+    * `touch requirements.txt`
+    * The simplest form of this file simply lists, one package per line, the names of the packages needed. You can also specify version numbers if you need a specific version, or any version higher/lower than a specific version. E.g.:
 
-```
-pip install --upgrade pip
-```
+	```
+	###### Requirements without Version Specifiers ######
+	numpy
+	nose-cov
+	pandas
 
-Then, to install new packages simply do:
+	###### Requirements with Version Specifiers ######
+	docopt == 0.6.1             # Version Matching. Must be version 0.6.1
+	keyring >= 4.1.1            # Minimum version 4.1.1
+	coverage != 3.5             # Version Exclusion. Anything except version 3.5
+	Mopidy-Dirble ~= 1.1        # Compatible release. Same as >= 1.1, == 1.*
+	```
 
-```
-pip install <PACKAGE>
-```
+    * Before installing any new libraries it's always good to make sure `pip` is up to date. Run:
+    
+	```
+	pip install --upgrade pip
+	```
+    
+    * Once you've created the `requirements.txt` file, you can simply run: `pip install -r /path/to/requirements.txt` to install all the packages.
 
 5. **Add virtualenv dir to `.gitignore`**. When you create your virtual environment, it will create a directory in your git repo (assuming you are using git) with thousands of files in it (essentially all the packages you need installed). You don't want this in git (!), so make sure you add this directory to your `.gitignore` file (e.g if it's called `.venv`, add `.venv` to your `.gitignore`).
 
@@ -94,9 +107,6 @@ jupyter lab
 ```
 
 And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using your virtual environment.
-
-## Making dependencies reproducible
-TODO: talk about `requirements.txt` and alternatives.
 
 ## Connecting to github
 1. Set up new remote project
