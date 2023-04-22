@@ -97,3 +97,36 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
 
 ## Making dependencies reproducible
 TODO: talk about `requirements.txt` and alternatives.
+
+## Connecting to github
+1. Set up new remote project
+    * In a web browser go to github.com/<USER-NAME>
+    * Click "Repositories" -> "New" -> Fill out details -> "Create repository"
+
+2. Add ssh key
+    * On your local machine open a terminal
+    * If needed, create a new key:
+        * `cd .ssh`
+        * `ssh-keygen -f "id_ed25519_<SOME_FILE_NAME>" -t ed25519 -C "<YOUR GIT EMAIL>"`
+    
+    * On a web browser go to your github profile and click -> `Settings` -> `SSH and GPG keys` -> "New SSH key"
+    * Open the file "id_ed25519_<SOME_FILE_NAME>.pub" and copy the contents to the "Key" box on that webpage -> click "Add SSH key"    
+    * Add to Apple keychain: `ssh-add --apple-use-keychain ~/.ssh/id_ed25519_<SOME_FILE_NAME>`
+    * To automatically add your key everytime you open the terminal, add the following line to your `.zprofile` or `.zshrc`: `ssh-add --apple-load-keychain`
+        
+3. Using multiple git accounts
+    * If you want to use more than one git account from the same computer, then add the details of your key to `~/.ssh/config`:
+    
+    ```
+    Host github.com-<YOUR_GIT_USER_NAME>
+        AddKeysToAgent yes
+        UseKeychain yes
+	     HostName github.com
+	     User git
+	     IdentityFile ~/.ssh/id_ed25519_<SOME_FILE_NAME>
+    ```
+    
+    * Add the second account using a similar block, having repeated the above process first for this second account.
+    
+4. Clone your new project to your local machine with ssh:
+    * `git clone git@github.com:<YOU_GIT_USERNAME>/<YOUR_PROJECT_NAME>.git`
