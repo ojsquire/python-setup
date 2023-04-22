@@ -140,3 +140,10 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
     
 4. Clone your new project to your local machine with ssh:
     * `git clone git@github.com:<YOU_GIT_USERNAME>/<YOUR_PROJECT_NAME>.git`
+	
+5. Before making any commits, make sure to set your username and email in git (otherwise will ask you for these every time you try to commit, or will commit with wrong user details if a different user and email were already set). To do so run:
+	
+	```
+	git config user.name "<YOUR_GIT_USERNAME>"
+	git config user.email "<YOUR_GIT_EMAIL>"
+	```
