@@ -148,4 +148,14 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
 	git config user.email "<YOUR_GIT_EMAIL>"
 	```
 ## IDE setup - VS Code
-[TO DO] - add section about setting up VS Code as the IDE.
+When working on a Python project it is very useful to use an IDE (Integrated Development Environment), which will make your life much easier (project management, syntax highlighting, version control integration, debugging, built in terminal etc etc). Here I am proposing to use VS Code. Why VS Code? I used to use emacs, which is great as it's highly customisable, but it really takes a lot of effort learning all the commands and you need to have some knowledge of the LISP programming language to use it well. VS Code makes all that much simpler. I prefer VS Code over PyCharm simply because it doesn't require a paid license and VS Code nowadays is more widely used. It's the default IDE in several big tech companies too (e.g. Microsoft and Meta), so there's a large community out there.
+
+### Open project
+First open your git project folder in VS Code: `File -> Open Folder`.
+
+### Get VS Code to use your virtual environment
+By default when you open your Python project, VS Code will be using the globally installed version of Python on your machine, not the version in your `.venv` folder, so all the packages you've installed there won't be available. To get it to point to your virtual env do the following:
+* Open the VS Code command palette: `Ctrl+Shift+P`
+* Look for `Python: Select Interpreter` (start typing this)
+* There should be a list of options in the dropdown. With any luck the Recommended one (at the top, starred) should be the one you want (`./.venv/bin/python`). Select this. If it's not there then:
+* Type the path you want (e.g. `./.venv/bin/python`) in the `+ Enter interpreter path` box, and hit Enter.
