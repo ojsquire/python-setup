@@ -97,7 +97,7 @@ pip install ipykernel
 Now you can create a Jupyter kernel using your virtual environment by running:
 
 ```
-python -m ipykernel install --name=<YOUR-NEW-KERNEL-NAME>
+python -m ipykernel install --name=<YOUR-NEW-KERNEL-NAME> --user
 ```
 
 Then launch jupyter lab:
