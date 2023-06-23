@@ -147,3 +147,5 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
 	git config user.name "<YOUR_GIT_USERNAME>"
 	git config user.email "<YOUR_GIT_EMAIL>"
 	```
+## IDE setup - VS Code
+[TO DO] - add section about setting up VS Code as the IDE.
