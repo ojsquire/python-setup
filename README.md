@@ -131,9 +131,9 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
     Host github.com-<YOUR_GIT_USER_NAME>
         AddKeysToAgent yes
         UseKeychain yes
-	HostName github.com
-	User git
-	IdentityFile ~/.ssh/id_ed25519_<SOME_FILE_NAME>
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/id_ed25519_<SOME_FILE_NAME>
         IdentitiesOnly yes
     ```
     
