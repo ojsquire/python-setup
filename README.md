@@ -122,7 +122,7 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
     * On a web browser go to your github profile and click -> `Settings` -> `SSH and GPG keys` -> "New SSH key"
     * Open the file "id_ed25519_<SOME_FILE_NAME>.pub" and copy the contents to the "Key" box on that webpage -> click "Add SSH key"    
     * Add to Apple keychain: `ssh-add --apple-use-keychain ~/.ssh/id_ed25519_<SOME_FILE_NAME>`
-    * To automatically add your key everytime you open the terminal, add the following line to your `.zprofile` or `.zshrc`: `ssh-add --apple-load-keychain`
+    * Note: this _should_ permanently add your ssh key to your keychain. If not you can add the line to your `.zshrc` or `.zprofile` file: `ssh-add --apple-load-keychain  ~/.ssh/id_ed25519_<SOME_FILE_NAME>`
         
 3. Using multiple git accounts
     * If you want to use more than one git account from the same computer, then add the details of your key to `~/.ssh/config`:
@@ -131,16 +131,18 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
     Host github.com-<YOUR_GIT_USER_NAME>
         AddKeysToAgent yes
         UseKeychain yes
-	     HostName github.com
-	     User git
-	     IdentityFile ~/.ssh/id_ed25519_<SOME_FILE_NAME>
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_<SOME_FILE_NAME>
+        IdentitiesOnly yes
     ```
     
     * Add the second account using a similar block, having repeated the above process first for this second account.
     
-4. Clone your new project to your local machine with ssh:
-    * `git clone git@github.com:<YOU_GIT_USERNAME>/<YOUR_PROJECT_NAME>.git`
-	
+4. Clone your new project to your local machine with ssh (note here that the bit after `git@` (in this case the `github.com-<YOUR_GIT_USER_NAME>`), must match the Host in your .ssh config file! If it doesn't, then when you clone and then try to push later on, git will probably try to use the wrong ssh key and won't be able to push!):
+
+    * `git clone git@github.com-<YOUR_GIT_USER_NAME>:<GIT_USER_NAME_OF_PROJECT>/<PROJECT_NAME>.git`
+
 5. Before making any commits, make sure to set your username and email in git (otherwise will ask you for these every time you try to commit, or will commit with wrong user details if a different user and email were already set). To do so run:
 	
 	```
