@@ -118,11 +118,11 @@ And select `<YOUR-NEW-KERNEL-NAME>` from the list to create a new notebook using
     * If needed, create a new key:
         * `cd .ssh`
         * `ssh-keygen -f "id_ed25519_<SOME_FILE_NAME>" -t ed25519 -C "<YOUR GIT EMAIL>"`
-    
     * On a web browser go to your github profile and click -> `Settings` -> `SSH and GPG keys` -> "New SSH key"
     * Open the file "id_ed25519_<SOME_FILE_NAME>.pub" and copy the contents to the "Key" box on that webpage -> click "Add SSH key"    
+    * Check what keys you have in your apple keychain and if yours is already there (it shouldn't be): `ssh-add -l`. If it isn't, then:
     * Add to Apple keychain: `ssh-add --apple-use-keychain ~/.ssh/id_ed25519_<SOME_FILE_NAME>`
-    * Note: this _should_ permanently add your ssh key to your keychain. If not you can add the line to your `.zshrc` or `.zprofile` file: `ssh-add --apple-load-keychain  ~/.ssh/id_ed25519_<SOME_FILE_NAME>`
+    * Note: this _should_ permanently add your ssh key to your keychain. If not (or if so, this is probably just a good idea anyway) you can add the line to your `.zshrc` or `.zprofile` file: `ssh-add --apple-load-keychain`. This should automatically load all of the keys in your ssh config file (well all the ones specified to be used in the keychain, see next section) everytime a new terminal is opened.
         
 3. Using multiple git accounts
     * If you want to use more than one git account from the same computer, then add the details of your key to `~/.ssh/config`:
