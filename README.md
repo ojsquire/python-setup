@@ -161,3 +161,6 @@ By default when you open your Python project, VS Code will be using the globally
 * Look for `Python: Select Interpreter` (start typing this)
 * There should be a list of options in the dropdown. With any luck the Recommended one (at the top, starred) should be the one you want (`./.venv/bin/python`). Select this. If it's not there then:
 * Type the path you want (e.g. `./.venv/bin/python`) in the `+ Enter interpreter path` box, and hit Enter.
+
+## More powerful alternative to virtual environments: Containers
+As you saw in the "Virtual environments" section, virtual environments give you good control over which Python packages you have installed in an environment, and it's possible to set one up with a specific version of Python, but if we want even _more_ control of our environment in a programmatic way, it is better to use containers, e.g. with Docker. Containers allow you to specify everything about your environment, e.g. Python version, packages, any other programs needed (e.g. Spark), environment variables, even the operating system used. You can get the official Python Docker images from [here](https://hub.docker.com/_/python). 
