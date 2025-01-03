@@ -7,6 +7,21 @@ Mac actually comes with Python pre-installed, but it is a very old version of Py
 ### 1. Install Mac prerequisites
 * Install [`brew`](https://brew.sh/), Mac's "missing" package manager. This should be the first thing you install, since it's needed for the installation of everything else!
 * Make sure [`xcode`](https://en.wikipedia.org/wiki/Xcode) and xcode developer tools are installed (there were some issues with this on Catalina, may have to manually download & install).
+#### [OPTIONAL] 1 (a) Shell customisations
+Two things that make the experience of using the terminal on Mac a much nicer experience:
+
+* Install [iTerm2](https://iterm2.com/) (more powerful replacement of the default terminal):
+
+```
+brew install --cask iterm2
+```
+
+* Install [Oh My Zsh](https://ohmyz.sh/)  (nice color palettes etc). [Installation instructions](https://github.com/ohmyzsh/ohmyzsh?tab=readme-ov-file#basic-installation):
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 
 ### 2. Install Pyenv
 [Pyenv](https://github.com/pyenv/pyenv) is a tool for managing Python versions on your machine. It is very easy to end up with several versions of Python on your machine (Mac already comes with 2.7!), and you may actually want this, since different projects can use different versions. However, if you don't manage these versions carefully you can end up with all sorts of problems (e.g. dependency issues). Therefore, before installing any new versions of Python I would recommend installing `pyenv` (follow the [installation instructions](https://github.com/pyenv/pyenv#installation)).
@@ -163,4 +178,4 @@ By default when you open your Python project, VS Code will be using the globally
 * Type the path you want (e.g. `./.venv/bin/python`) in the `+ Enter interpreter path` box, and hit Enter.
 
 ## More powerful alternative to virtual environments: Containers
-As you saw in the "Virtual environments" section, virtual environments give you good control over which Python packages you have installed in an environment, and it's possible to set one up with a specific version of Python, but if we want even _more_ control of our environment in a programmatic way, it is better to use containers, e.g. with Docker. Containers allow you to specify everything about your environment, e.g. Python version, packages, any other programs needed (e.g. Spark), environment variables, even the operating system used. You can get the official Python Docker images from [here](https://hub.docker.com/_/python). 
+As you saw in the "Virtual environments" section, virtual environments give you good control over which Python packages you have installed in an environment, and it's possible to set one up with a specific version of Python, but if we want even _more_ control of our environment in a programmatic way, it is better to use containers, e.g. with Docker. Containers allow you to specify everything about your environment, e.g. Python version, packages, any other programs needed (e.g. Spark), environment variables, even the operating system used. You can get the official Python Docker images from [here](https://hub.docker.com/_/python).
